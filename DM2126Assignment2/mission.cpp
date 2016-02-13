@@ -38,12 +38,31 @@ bool Brackets(const string& input)
 	}*/
 
 	stack<char> cStack;
-	for (int i = 0; i < input.length(); i++)
+	if (input.empty())
+		return false;
+	else
 	{
-
+		for (size_t pos = 0; pos < input.length(); pos++)
+		{
+			if (input[pos] == '(' || input[pos] == '{' || input[pos] == '[' || input[pos] == '<')
+				cStack.push(input[pos]);
+			else if (input[pos] == ')' || input[pos] == '}' || input[pos] == ']' || input[pos] == '>')
+			{
+				if ((cStack.top() == '(' && input[pos] == ')')
+					|| (cStack.top() == '{' && input[pos] == '}')
+					|| (cStack.top() == '[' && input[pos] == ']')
+					|| (cStack.top() == '<' && input[pos] == '>'))
+					cStack.pop();
+				else
+					return false;
+			}
+		}
 	}
+	
+	if (cStack.empty())
+		return true;
 
-	return true;
+	return false;
 }
 
 // Query machine, hits
