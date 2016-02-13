@@ -37,7 +37,17 @@ int main()
     cout << "Part 1" << endl;
     LinkedList ll;
     ll.push_front(1);
-    ll.push_back(1);
+    ll.push_back(10);
+	ll.push_front(9);
+	ll.push_back(7);
+	ll.push_front(29);
+	ll.push_front(5);
+	ll.push_front(109);
+	ll.push_back(6);
+	ll.push_front(-120);
+	ll.push_back(8);
+	ll.push_back(69);
+	ll.push_back(1);
     cout << ll.size() << endl;
     cout << ll.pop_back() << endl;
     cout << ll.pop_front() << endl;
@@ -51,6 +61,14 @@ int main()
     Queue q;
     q.enqueue(20);
     q.enqueue(42);
+	q.enqueue(6);
+	q.enqueue(6104);
+	q.enqueue(6153);
+	q.enqueue(632);
+	q.enqueue(6757);
+	q.enqueue(612);
+	q.enqueue(69);
+	q.enqueue(42);
     cout << q.dequeue() << endl;
     cout << q.size() << endl;
     cout << endl;
@@ -59,22 +77,34 @@ int main()
     cout << "Part 3" << endl;
     Stack s;
     s.push(46);
-    s.push(8);
+	s.push(8);
+	s.push(90);
+	s.push(3210);
+	s.push(20);
+	s.push(93);
     cout << s.pop() << endl;
     cout << s.size() << endl;
     cout << endl;
 
     // part 4
     cout << "Part 4" << endl;
-    const char* input = "<>";
+	//const char* input = "<>"; 
+	//const char* input = "<{}>[]";
+	//const char* input = "<{}>[][{]}";
+	//const char* input = "[]]";
+	const char* input = "[><]";
     cout << Brackets(input) << endl;
     cout << endl;
 
 
     // part 5
     cout << "Part 5" << endl;
-    int dataArray[] = {1, 4, 5, 6, 9, 1, 1, 4};
-    int queryArray[] = {1, 2, 3};
+    /*int dataArray[] = {1, 4, 5, 6, 9, 1, 1, 4};
+    int queryArray[] = {1, 2, 3};*/
+	/*int dataArray[] = { 5, 4, 5, 6, 9, 10, 7, 4 };
+	int queryArray[] = { 1, 6, 4 };*/
+	int dataArray[] = { 10, 29, 29, 7, 9, 6, 1, -20 };
+	int queryArray[] = { 1, 29, -20 };
 
     vector<int> data(dataArray, dataArray + sizeof(dataArray) / sizeof(dataArray[0]));
     vector<int> queries(queryArray, queryArray + sizeof(queryArray) / sizeof(queryArray[0]));

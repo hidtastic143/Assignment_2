@@ -68,5 +68,14 @@ bool Brackets(const string& input)
 // Query machine, hits
 void QueryMachine(vector<int>& data, vector<int>& queries, vector<unsigned int>& results)
 {
-
+	for (int qPos = 0; qPos < queries.size(); qPos++)
+	{
+		int value = 0;
+		for (int dPos = 0; dPos < data.size(); dPos++)
+		{
+			if (queries[qPos] == data[dPos])
+				value++;
+		}
+		results.push_back(value);
+	}
 }
